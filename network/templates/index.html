@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>極</title>
+	<!-- 引入网站图标 -->
+	<link rel="shortcut icon" href="../static/ig.ico">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/show.css">
+	<link rel="stylesheet" href="../static/css/sortable.min.css">
+	<script src="{{url_for('static', filename='js/sortable.min.js')}}"></script>
+  </head>
+  <body>
+		<!-- 首页main.html -->
+		<!-- 头部部分开始 -->
+		<div class="head w">
+			<!-- logo部分 -->
+			<div class="logo">
+				<img src="../static/image/logo.png">
+			</div>
+			<!-- 导航栏 nav -->
+			<div class="head_nav">
+				<ul>
+					<li><a href="er.html">ER</a></li>
+					<li><a href="ws.html">WS</a></li>
+					<li><a href="ba.html">BA</a></li>
+					<li><a href="file.html">文件上传</a></li>
+				</ul>
+			</div>
+			<!-- 搜索模块 -->
+			<div class="search">
+				<input type="text" value="输入关键词">
+				<button></button>
+			</div>
+			<!-- 用户模块 -->
+			<div class="user">
+				<img src="../static/image/user.png" alt="" style="vertical-align: middle;">
+				minyue
+			</div>
+		</div>
+		<!-- 头部部分结束 -->
+
+		<!-- 瀑布流展示开始 -->
+		<main>
+			<div class="container">
+				<div class="wrapper">
+					<ul class="sortable__nav nav">
+						<li>
+							<a data-sjslink="all" class="nav__link">
+					  			All
+							</a>
+						</li>
+						<li>
+							<a data-sjslink="net" class="nav__link">
+					  			网络类型
+							</a>
+						</li>
+						<li>
+							<a data-sjslink="node" class="nav__link">
+					  			节点中心性
+							</a>
+						</li>
+						<li>
+							<a data-sjslink="tool" class="nav__link">
+					  			开源工具
+							</a>
+						</li>
+					</ul>
+					<div id="sortable" class="sjs-default">
+						<div data-sjsel="net">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-1.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">ER模型之学生饭卡</h2>
+									<p class="card__text">
+										E-R图又称实体关系图，是一种提供了实体，属性和联系的方法，用来描述现实世界的概念模型。通俗点讲就是，当我们理解了实际问题的需求之后，需要用一种方法来表示这种需求，概念模型就是用来描述这种需求。比如学生生活中的校园卡系统
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="net">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-2.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">WS网络？交际圈？</h2>
+									<p class="card__text">
+										小世界网络是一种数学图,在社交网络中，这种网络属性意味着一些彼此并不相识的人，可以通过一条很短的熟人链条被联系在一起，这也就是小世界现象。许多经验网络图都展示出了小世界现象，例如社交网络、互联网的底层架构、诸如Wikipedia的百科类网站以及基因网络等等。
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="net">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-3.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">BA网络，你知道吗？</h2>
+									<p class="card__text">
+										前人为了解释幂律的产生机制，提出了无标度网络模型（BA模型）。BA模型具有两个特性，其一是增长性，所谓增长性是指网络规模是在不断的增大的，在研究的网络当中，网络的节点是不断的增加的；其二就是优先连接机制，这个特性是指网络当中不断产生的新的节点更倾向于和那些连接度较大的节点相连接。
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="node">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-4.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">度中心性</h2>
+									<p class="card__text">
+										在无向网络中，我们可以用一个节点的度数来衡量中心性。这一指标背后的假设是：重要的节点就是拥有许多连接的节点。你的社会关系越多，你的影响力就越强。
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="node">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-5.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">接近中心性</h2>
+									<p class="card__text">
+										点度中心性仅仅利用了网络的局部特征，即节点的连接数有多少，但一个人连接数多，并不代表他/她处于网络的核心位置。接近中心性和中介中心性一样，都利用了整个网络的特征，即一个节点在整个结构中所处的位置。如果节点到图中其他节点的最短距离都很小，那么它的接近中心性就很高。相比中介中心性，接近中心性更接近几何上的中心位置。
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="node">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-6.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">中介中心性</h2>
+									<p class="card__text">
+										网络中两个非相邻成员之间的相互作用依赖于其他成员，特别是两成员之间路径上的那些成员。他们对两个非相邻成员之间的相互作用具有控制和制约作用。中介中心性的思想是：如果一个成员位于其他成员的多条最短路径上，那么该成员就是核心成员，就具有较大的中介中心性。
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="tool">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-7.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">echarts</h2>
+									<p class="card__text">
+										echarts 是一个用纯JavaScript编写的一个图表库， 能够很简单便捷的在web网站或是web应用程序添加有交互性的图表，并且免费提供给个人学习、个人网站和非商业用途使用。echarts支持的图表类型有曲线图、区域图、柱状图、饼状图、散状点图和综合图表。
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="node">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-8.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">特征向量中心性</h2>
+									<p class="card__text">
+										特征向量中心性的基本思想是，一个节点的中心性是相邻节点中心性的函数。也就是说，与你连接的人越重要，你也就越重要。
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="node">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-9.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">katz中心性</h2>
+									<p class="card__text">
+										katz centrality通过测量相邻节点（一级节点）和网络中通过这些相邻节点连接到考虑中节点的所有其他节点的数量，计算网络中节点的相对影响。额外的权重可以通过参数$beta$提供给直接邻居。然而，为了正确计算Katz中心度，衰减因子$alpha$应严格小于邻接矩阵的最大逆特征值
+									</p>
+								</div>
+							</div>
+						</div>
+						<div data-sjsel="tool">
+							<div class="card">
+								<img class="card__picture" src="../static/image/item-10.jpg" alt="">
+								<div class="card-infos">
+									<h2 class="card__title">networkx</h2>
+									<p class="card__text">
+										用python语言编写的软件包，便于用户对复杂网络进行创建、操作和学习。利用networkx可以以标准化和非标准化的数据格式存储网络、生成多种随机网络和经典网络、分析网络结构、建立网络模型、设计新的网络算法、进行网络绘制等。
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	
+		</div>
+		<script type="text/javascript">
+			document.querySelector('#sortable').sortablejs()
+		</script>
+		<!-- 瀑布流展示结束 -->
+		
+</html>

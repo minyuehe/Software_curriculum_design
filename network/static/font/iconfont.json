@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2225320",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>ER网络演化模型</title>
+	<!-- 引入网站图标 -->
+	<link rel="shortcut icon" href="../static/ig.ico">
+    <!-- 插入jquery -->
+    <script src="../static/jquery.js"></script>
+    <!-- 插入echarts -->
+    <script src="../static/echarts.min.js"></script>
+	<!-- 设定一个全局变量作为一个应用根路径的前缀 -->
+    <script type=text/javascript>
+    	var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
+	</script>
+	<!-- 异步函数引入 -->
+    <script src="{{url_for('static', filename='js/er_submit.js')}}"></script>
+	<script src="{{url_for('static', filename='js/update.js')}}"></script>
+	<script src="{{url_for('static', filename='js/last.js')}}"></script>
+	<script src="{{url_for('static', filename='js/disable/degree.js')}}"></script>
+	<script src="{{url_for('static', filename='js/disable/between.js')}}"></script>
+	<script src="{{url_for('static', filename='js/disable/katz.js')}}"></script>
+	<script src="{{url_for('static', filename='js/disable/close.js')}}"></script>
+	<script src="{{url_for('static', filename='js/disable/vector.js')}}"></script>
+	<script src="{{url_for('static', filename='js/show_remove.js')}}"></script>
+
+	<!-- css样式引入 -->
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/font/iconfont.css">
+	<link
+      href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+	/>
+ 
+  </head>
+  <body>
+ 
+    <!-- 头部部分开始 -->
+	<div class="head w">
+		<!-- logo部分 -->
+		<a class="logo" href="/">
+			<img src="../static/image/logo.png">
+		</a>
+		<!-- 导航栏 nav -->
+		<div class="head_nav">
+			<ul>
+				<li><a href="#" style="color: blue;">ER</a></li>
+				<li><a href="ws.html">WS</a></li>
+				<li><a href="ba.html">BA</a></li>
+			</ul>
+		</div>
+		<!-- 搜索模块 -->
+		<div class="search">
+			<input type="text" value="输入关键词">
+			<button></button>
+		</div>
+		<!-- 用户模块 -->
+		<div class="user">
+			<img src="../static/image/user.png" id="ico" alt="" style="vertical-align: middle;">
+			minyue
+		</div>
+	</div>
+    <!-- 头部部分结束 -->
+	<!-- 主体部分 -->
+	<div class="w">
+		<div style="padding-left: 14px">
+			<p>
+				ER网络的顶点个数：<input type="text" size="5" name="er_nodes" value="20" />
+				连边概率：<input type="text" size="5" name="er_p" value="0.1" />
+			</p>
+		</div>
+		<div>
+			<nav class="navbar navbar-default navbar-mobile bootsnav">
+              
+				<div class="collapse navbar-collapse" id="navbar-menu">
+				  <ul
+				  	style="float: left;"
+					class="nav navbar-nav"
+					data-in="fadeInDown"
+					data-out="fadeOutUp"
+				  >
+					<li class="active">
+					  <a href="#" 
+						><span class="iconfont">&#xe691;</span></span
+					  ></a>
+					</li>
+					<li>
+					  <a href="#" id="er_submit"
+						>create </a>
+					</li>
+					<li class="dropdown">
+					  <a
+						href="#"
+						class="dropdown-toggle"
+				
+						>show</a>
+					  <ul class="dropdown-menu">
+						<li><a href="#" id="update">update</a></li>
+						<li><a href="#" id="last">show last</a></li>
+					  </ul>
+					</li>
+					
+					<li class="dropdown">
+					  <a
+						href="#"
+						class="dropdown-toggle"
+						>remove methods</span
+					  ></a>
+					  <ul class="dropdown-menu">
+						<li><a href="#" id="between">介数中心性失效</a></li>
+						<li><a href="#" id="close">接近中心性</a></li>
+						<li><a href="#" id="degree">度中心性</a></li>
+						<li><a href="#" id="vector">特征向量中心性</a></li>
+						<li><a href="#" id="katz">katz中心性</a></li>
+					  </ul>
+					</li>
+					<li>
+						<a href="#" id="show_remove"
+						  >remove </a>
+					</li>
+					<li class="dropdown">
+					<a
+						href="#"
+						class="dropdown-toggle"
+				
+						>个性化</a>
+					<ul class="dropdown-menu">
+						<li><a href="#" id="colorpalettediv" value="rgb(92,123,217)" >color</a></li>
+					</ul>
+					</li>
+				  </ul>
+				</div>
+			</nav>
+		</div>
+
+		<div style="padding-left: 14px">
+			平均度：<span id="avgdegree">?</span>
+			平均路径：<span id="avgpath">?</span>
+			平均聚类系数：<span id="avgcluster">?</span>
+		</div>
+		<div style="overflow: hidden;">
+			<div id="er_pic" style="width: 590px; height: 400px; float: left;"></div>
+			<div id="er_degree" style="width: 590px; height: 400px; float: right;"></div>
+		</div>
+	</div>
+
+	<!-- 导航栏样式文件 -->
+	<script src="{{url_for('static', filename='js/bootsnav.js')}}"/></script>
+	<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="{{url_for('static', filename='js/colorpalettepicker.js')}}"></script>
+    <script type="text/javascript">
+      $("#colorpalettediv").colorPalettePicker({
+        lines: 4,
+        onSelected: function (color) {
+          $("#colorpalettediv").attr("value", color);
+        },
+      });
+    </script>
+  </body>
+</html>
