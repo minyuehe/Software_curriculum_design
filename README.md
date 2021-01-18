@@ -8,27 +8,19 @@
 
   ##### 1.先加载数据库mysql
 
-  前提完成数据库结构的搭建
+  ![image-20210118134309164](README/image-20210118134309164.png) 
 	
-<<<<<<< HEAD
-  实例如下：
+	![image-20210118134337322](README/image-20210118134337322.png) 
 	
-  ![grafcaldata](README/S5]MD7N[TO5M5$FPOZ69GO.png)
-=======
-	实例如下：
-	
-	![grafcaldata](README/S5]MD7N[TO5M5$FPOZ69GO.png)
->>>>>>> 1ad69c2 (软件课设最终版)
-	
-  ![jsondata](README/werqwrtwe.png)
+  ![image-20210118134354760](README/image-20210118134354760.png) 
 
-  ![nodedata](README/S3W1MBVLFFVUZU0CBX{}MDT.png)
-
-  
-  ##### 2.运行对应jquery.py主程序
-  
-  在对应`localhost:5000` 本地服务器端口下可以实现测试！
-
+	![image-20210118134403636](README/image-20210118134403636.png) 
+	
+	
+	  ##### 2.运行对应jquery.py主程序
+	
+	  	在对应`localhost:5000` 本地服务器端口下可以实现测试！
+	
 - ### 欢迎使用
 
   喜欢就请帮忙一个star！！！
